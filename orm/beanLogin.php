@@ -17,18 +17,11 @@
 
   </head>
  
-    
-    
-    
-    
   <body class="text-center">
-  
-      
-      
       
       <div class="container" style="width: 30%;">
           
-      <form role=form action="server/BDlogin" id="formlogin" name="formlogin" method="post">
+      <form role=form action="" method="">
           <a href="index.php">
       <img class="mb-4" src="bootstrap/img/Alphalogo.png" alt="logo" width="130" height="100">
            </a>
@@ -37,15 +30,15 @@
       <h3>Acesse sua conta</h3>
           
          
-          <form class="form-group">
+          <div class="form-group">
           <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="login" class="form-control" name="login" placeholder="Email" required autofocus>
+          <input type="email" id="inputEmail" class="form-control" name="" placeholder="Email" required autofocus>
           
           
           
           <div class="form-group">
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="text" id="senha" class="form-control" name="senha" placeholder="Password" >
+          <input type="password" id="inputPassword" class="form-control" name="" placeholder="Password" required>
           </div>
           
           <br>

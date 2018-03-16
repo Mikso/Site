@@ -9,7 +9,7 @@ $password = "";
 
 $dbname = "imoveis";
 
-$conn = mysqli_connect($host, $user, $password, $dbname);
+$conn = new mysqli($host, $user, $password, $dbname);
 
 
 // checar conexao

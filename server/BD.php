@@ -26,7 +26,25 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 
-    $query2 = "INSERT INTO usuario(nome, sobrenome, idade, username, rg, telefone, email, senha) VALUES ('$nome', '$sobrenome', '$idade', '$username', '$rg', '$telefone', '$email', '$senha')";
+    $query2 = "INSERT INTO 
+    cliente(
+    nome,
+    sobrenome,
+    idade,
+    username,
+    rg,
+    telefone,
+    email,
+    senha)
+    VALUES (
+    '$nome',
+    '$sobrenome',
+    '$idade',
+    '$username',
+    '$rg',
+    '$telefone',
+    '$email',
+    '$senha')";
 
 
 if(mysqli_query($conn, $query2)) {

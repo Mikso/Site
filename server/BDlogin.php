@@ -1,25 +1,42 @@
-   
+
     <?php 
     
     // adicionando a conexao a pagina
         include('conexao.php');
         
-    $usuario = $_POST['usuario_l'];
-        
-    $senha = $_POST['senha_l'];
+session_start();
     
-    // query de insercao
-    
-    $query = "INSERT INTO login(usuario, senha) VALUES ('$usuario', '$senha')";
-        
 
-  if(mysqli_query($conn, $query)) {
-    echo "Record Succefully insert into Database";
-}else{
-    echo "Error in Query";
-}
+
+$login =  $_POST['login'];
+$password = $_POST['senha'];
+
+$conn = new PDO('mysql:host=localhost;dbname=imoveis', 'root', '') or die("Sem acesso ao banco de dados". mysql_error());
+
+
+
+/* TENTAR CORRIGIR O ERRO DO LOGIN
+https://www.youtube.com/watch?v=VYZsd67_4F4 **/
+$result = "SELECT * FROM login WHERE usuario = '$login'";
+$row = mysql_num_rows($result);
+
+
+if($row > 0) {
+    $_SESSION['login'] = $login;
+    //$_SESSION['senha'] = $senha;
+    header('location:site.php'); //OK
     
-    mysqli_close($conn);
+}
+else
+   echo "$login . $password";
+    
+    unset($_SESSION['login']);
+    //unset($_SESSION['senha']);
+    //header('location:http://localhost/Site/login.php');  //OK
+
+
+    
+    
     ?>
     
     
